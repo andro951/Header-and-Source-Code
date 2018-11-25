@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include "functions.h"
 using namespace std;
 //Display a simple opening message.
 void displayIntroduction()
@@ -51,10 +52,7 @@ void getUserCommandAndObject(string prompt, string& command, string& object)
 {
 	string userText = "";
 	cout << prompt;
-	do //Prevents the user from inputting a blank command and an bug that would create a blank command when useing use phone.
-	{
-		getline(cin, userText, '\n'); //Allows the user to input whitespaces which cin does not.
-	} while (userText == "");
+	userText = getInput();
 	for (unsigned int i = 0; i < userText.length(); i++)
 	{
 		userText[i] = tolower(userText[i]); //Convert each letter in userText to lowercase.
@@ -101,4 +99,14 @@ void getUserCommandAndObject(string prompt, string& command, string& object)
 void didntRecognizeCommand(string command)
 {
 	cout << "Didn't regognize the command, " << command << ".\n";
+}
+
+string getInput()
+{
+	string userInput;
+	do //Prevents the user from inputting a blank command and an bug that would create a blank command when useing use phone.
+	{
+		getline(cin, userInput, '\n'); //Allows the user to input whitespaces which cin does not.
+	} while (userInput == "");
+	return userInput;
 }

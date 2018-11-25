@@ -294,7 +294,7 @@ int main()
 				{
 					cout << "Would you like to call 911 or the front desk? (type 911 or front desk)\n";
 					string userAnswer; //Stores the user's answer to the above question.
-					cin >> userAnswer;
+					userAnswer = getInput();
 					// If the user wants to call 911, they will win at the end if the end is >= 20 minutes from the time they called.
 					if (userAnswer == "911")
 					{
