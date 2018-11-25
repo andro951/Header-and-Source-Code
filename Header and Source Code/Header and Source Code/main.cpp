@@ -1,12 +1,8 @@
 //Interactive fiction.
 #include <iostream>
 #include <string>
+#include "functions.h"
 using namespace std;
-
-void displayIntroduction(); //Display a simple opening message.
-void displayTime(int& time); //Convert the time into a standard format and display it.
-void getUserCommandAndObject(string prompt, string& command, string& object); //Get a command and object from the user with one cin and seperate them.
-void didntRecognizeCommand(string command); //Display a simple message when recieveing an unrecoginzed command.
 
 int main()
 {
